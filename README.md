@@ -11,13 +11,13 @@ Install the gem:
 In a plugin file within your Jekyll project's `_plugins` directory:
 
 	# _plugins/my-plugin.rb
-	require "jekyll-sass"
+	require "jekyll-events"
 
 Bundler Setup
 -------------
 Using bundler to manage gems for your Jekyll project? Just add
 
-	gem "jekyll-sass"
+	gem "jekyll-events"
 
 to your gemfile and create the following plugin in your projects `_plugins`
 directory.  This will automatically require all of the gems specified in your Gemfile.
