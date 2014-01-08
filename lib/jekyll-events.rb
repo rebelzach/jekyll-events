@@ -40,11 +40,20 @@ module Jekyll
         entries.each do |f|
           if Post.valid?(f)
             event = Event.new(site, site.source, dir, f)
-            if event.published && event.date >= site.time
+            if event.published && end_date(event).to_i >= site.time.to_i
               site.aggregate_post_info(event)
             end
           end
         end
+      end
+
+      def end_date(event)
+        if event.data.key?('end_date')
+          event_end_date = Time.parse(event.data['end_date'].to_s)
+        else
+          event_end_date = event.date
+        end
+        event_end_date
       end
     end
   end
